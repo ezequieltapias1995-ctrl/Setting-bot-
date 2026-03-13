@@ -34,9 +34,9 @@ else:
     TELEGRAM_CHAT_ID = input("Introduce tu TELEGRAM_CHAT_ID: ").strip()
     ODDS_API_KEY = input("Introduce tu ODDS_API_KEY: ").strip()
     try:
-        UMBRAL_EV = float(input("Umbral de EV % (Enter para 5%): ") or "5.0")
+        UMBRAL_EV = float(input("Umbral de EV % (Enter para 2%): ") or "2.0")
     except:
-        UMBRAL_EV = 5.0
+        UMBRAL_EV = 2.0
     print("✅ Datos guardados para esta sesión.")
 
 # =============================================================================
@@ -95,7 +95,7 @@ def obtener_cuotas_1x2(partido):
 
 def obtener_cuotas_goles(partido, lineas=None):
     if lineas is None:
-        lineas = [2.5, 3.5]
+        lineas = [0.5, 1.5, 2.5, 3.5]
     resultados = {}
     for bookmaker in partido['bookmakers']:
         for market in bookmaker['markets']:
